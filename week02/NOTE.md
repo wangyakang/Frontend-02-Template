@@ -29,7 +29,7 @@
   4. Null
   5. Undefined
   6. Object
-  7. Symbol
+  7. Symbol: 返回唯一值，只有通过创建时给的值能访问到，可用在Object key中，增加唯一性和隐私性。
   ## Number 
   + JavaScript 内部，所有数字都是以64位浮点数形式储存，即使整数也是如此。所以，1与1.0是相同的，是同一个数。由于浮点数不是精确的值，所以一些计算比较也会出现误差。
   + 精度表示
@@ -55,3 +55,26 @@
   ## null undefind
   + null 代表空值，typeof 返回object，关键词、
   + undefind 表示没有值
+  ## Object
+  + 语法
+    + key可以是 string or symbol
+    + value
+      + data property: 数据属性描述状态， 如果data里放函数，那么也可以描述行为
+        + [[value]]
+        + writeable
+        + enumerable
+        + configurable
+      + accessor property: 数据属性描述行为
+        + get
+        + set
+        + enumerable
+        + configurable
+  + api
+    + {} . [] Object.defineProperty
+      > 提供基本对象机制，通过语法创建对象，访问属性和定义新的属性，改变属性的特征值
+    + Object.create/Object.setPrototypeOf/Object.getPrototypeOf
+      + 原型相关
+      + Object.create指定原型的创建对象
+      + Object.setPrototypeOf/Object.getPrototypeOf修改获取原型
+    + new/class/extends
+    + new/function/prototype 不推荐
